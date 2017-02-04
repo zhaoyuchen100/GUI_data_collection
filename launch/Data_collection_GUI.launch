@@ -1,5 +1,11 @@
-<launch>	
-	<!--<node pkg="ft_node" type="ft_pub_node" name="ft_pub_node"/>-->
+<launch>
+	<arg name="myo_white_port" default="/dev/ttyACM0" />
+        <arg name="myo_black_port" default="/dev/ttyACM1" />
+	<node pkg="ros_myo_black" type="myo-black-rawNode.py" name="ros_myo_black"
+		args="$(arg myo_white_port)"/>
+	<node pkg="ros_myo_white" type="myo-white-rawNode.py" name="ros_myo_white"
+		args="$(arg myo_black_port)"/>
+	<node pkg="ft_node" type="ft_pub_node" name="ft_pub_node"/>
 	<node pkg="gui_data_collection" type="bag_worker_node" name="bag_worker_node"   cwd="node"/>
 	<node pkg="gui_data_collection" type="data_collection_gui" name="data_collection_gui"/>
 	<node pkg="receive_xsens" type="receive_xsens" name="receive_xsens"/>
