@@ -1,0 +1,6 @@
+float64 peak_amp
+string ref_signal_type
+bool stop 
+
+---
+bool ack

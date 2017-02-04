@@ -1,0 +1,9 @@
+int64 Num_data
+int64[] bag_option
+int64 goal
+geometry_msgs/WrenchStamped ft_msg_ref
+string bag_name
+bool stop
+
+---
+bool ack

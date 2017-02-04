@@ -1,0 +1,6 @@
+<launch>	
+	<!--<node pkg="ft_node" type="ft_pub_node" name="ft_pub_node"/>-->
+	<node pkg="gui_data_collection" type="bag_worker_node" name="bag_worker_node"   cwd="node"/>
+	<node pkg="gui_data_collection" type="data_collection_gui" name="data_collection_gui"/>
+	<node pkg="receive_xsens" type="receive_xsens" name="receive_xsens"/>
+</launch>
